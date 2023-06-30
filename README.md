@@ -1,2 +1,1 @@
-# ReactTODO
-TODO list built with react.
+Simple TODO list application built using react.
