@@ -21,17 +21,17 @@ No back-end is developed. All storage is done through the browser's local storag
 * CSS
 
 # **Screenshots**
-<img src="https://i.imgur.com/lzfYubE.png" width="100%" title="Landing Page"/>
 Starting page.
+<img src="https://i.imgur.com/lzfYubE.png" width="100%" title="Landing Page"/>
 
-<img src="https://i.imgur.com/zocnnee.gif" width=100% title="Add todo">
 Adding a todo task.
+<img src="https://i.imgur.com/zocnnee.gif" width=100% title="Add todo">
 
-<img src="https://i.imgur.com/6YzSmuL.gif" width=100% title="Marking and unmarking tasks">
 Marking and unmarking tasks.
+<img src="https://i.imgur.com/6YzSmuL.gif" width=100% title="Marking and unmarking tasks">
 
-<img src="https://i.imgur.com/5JlOzNQ.gif" width=100% title="Deleting tasks">
 Deleting tasks.
+<img src="https://i.imgur.com/5JlOzNQ.gif" width=100% title="Deleting tasks">
 
 # **Code Samples**
 
