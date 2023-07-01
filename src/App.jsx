@@ -5,7 +5,7 @@ import { TodoList } from "./TodoList";
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
-    const value = localStorage.getItem("ITEM")
+  const value = localStorage.getItem("ITEM")
 
     if(value == null) {
       return []
