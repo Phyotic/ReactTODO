@@ -1,7 +1,7 @@
 export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
     return (
         <li key={id}>
-            <label>
+            <label className="itemLabel">
                 <input
                     type="checkbox"
                     checked={completed}
@@ -9,8 +9,9 @@ export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
                         toggleTodo(id, e.target.checked)
                     }}
                 />
-                {title}
+                <span className={completed ? "strikethrough" : ""}>{title}</span>
             </label>
+
             <button
                 className="btn btn-danger"
                 onClick={() => deleteTodo(id)}

@@ -1,9 +1,158 @@
 :root {
-    background-color: darkgray;
+    --gunmetal: #092327;
+    --darkSlateGray: #0B5351;
+    --lightSeaGreen: #00A9A5;
 }
 
+/* == Universal Style and Classes == */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans';
+    background-color: var(--darkSlateGray);
+    padding-top: 2%;
+    height: 100vh;
+    width: 100vw;
+}
+
+.btn {
+    padding: 5px 30px;
+    border-radius: 5px;
+    background-color: var(--lightSeaGreen);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: var(--gunmetal);
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    text-decoration-thickness: .1rem;
+    opacity: .5;
+}
+
+/* == NewTodoForm == */
+.new-item-form {
+    display: flex;
+    flex-flow: column;
+}
+
+.form-row {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: clamp(100px, 80%, 1500px);
+    justify-content: center;
+}
+
+#itemLable {
+    font-size: 2rem;
+}
+
+#item {
+    position: relative;
+    padding: 10px;
+    margin-left: 10px;
+    width: clamp(100px, 50%, 500px);
+    text-align: center;
+    background-color: var(--lightSeaGreen);
+    border-radius: 5px;
+}
+
+#addTodoButton {
+    padding: 10px 0;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 2rem;
+    box-shadow: 10px 5px 20px var(--gunmetal);
+}
+
+/* == Header == */ 
+.header {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* == Todo List == */
+.list {
+    margin: 0 auto;
+    width: 60%;
+    list-style: none;
+}
+
+/* == Todo Item == */
+li {
+    padding: 15px 0;
+    word-wrap: break-word;
+    border-bottom: 2px dashed var(--lightSeaGreen);
+}
+
+.itemLabel {
+    display: inline-block;
+    width: 60%;
+    cursor: pointer;
+}
+
+.itemLabel span {
+    font-weight: 700;
+}
+
+.itemLabel:hover {
+    opacity: .6;
+}
+
+.itemLabel input[type="checkbox"] {
+    margin-right: 10px;
+
+    appearance: none;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--lightSeaGreen);
+    outline: 1px solid var(--gunmetal);
+}
+
+.itemLabel input[type="checkbox"]:checked {
+    margin-right: 10px;
+    background-color: var(--gunmetal);
+    outline: 1px solid var(--lightSeaGreen);
+}
+
+.btn-danger {
+    float: right;
+    clear: right;
+}
+
+/* == Media Queries == */
+@media screen and (max-width: 425px) {
+    .form-row {
+        width: 100%;
+        flex-flow: column;
+    }
+
+    #itemLable {
+        align-self: center;
+    }
+
+    #item {
+        width: 100%;
+    }
+
+    .list {
+        width: 90%;
+    }
+
+    li {
+        padding: 20px;
+    }
+
+    .itemLabel {
+        width: 50%;
+    }
 }
