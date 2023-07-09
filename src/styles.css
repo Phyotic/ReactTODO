@@ -1,7 +1,7 @@
 :root {
     --gunmetal: #092327;
-    --darkSlateGray: #0B5351;
-    --lightSeaGreen: #00A9A5;
+    --darkSlateGray: #0b5351;
+    --lightSeaGreen: #00a9a5;
 }
 
 /* == Universal Style and Classes == */
@@ -12,7 +12,7 @@
 }
 
 body {
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     background-color: var(--darkSlateGray);
     padding-top: 2%;
     height: 100vh;
@@ -25,6 +25,8 @@ body {
     background-color: var(--lightSeaGreen);
     cursor: pointer;
     font-weight: 700;
+    float: right;
+    clear: right;
 }
 
 .btn:hover {
@@ -33,8 +35,17 @@ body {
 
 .strikethrough {
     text-decoration: line-through;
-    text-decoration-thickness: .1rem;
-    opacity: .5;
+    text-decoration-thickness: 0.1rem;
+    opacity: 0.5;
+}
+
+.list-button {
+    width: 20%;
+    max-height: 30px;
+}
+
+.edit-list-button {
+    width: 20%;
 }
 
 /* == NewTodoForm == */
@@ -67,13 +78,13 @@ body {
 
 #addTodoButton {
     padding: 10px 0;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     font-weight: 500;
     font-size: 2rem;
     box-shadow: 10px 5px 20px var(--gunmetal);
 }
 
-/* == Header == */ 
+/* == Header == */
 .header {
     display: flex;
     justify-content: center;
@@ -92,6 +103,7 @@ li {
     padding: 15px 0;
     word-wrap: break-word;
     border-bottom: 2px dashed var(--lightSeaGreen);
+    display: flex;
 }
 
 .itemLabel {
@@ -105,7 +117,7 @@ li {
 }
 
 .itemLabel:hover {
-    opacity: .6;
+    opacity: 0.6;
 }
 
 .itemLabel input[type="checkbox"] {
@@ -123,13 +135,22 @@ li {
     outline: 1px solid var(--lightSeaGreen);
 }
 
-.btn-danger {
-    float: right;
-    clear: right;
+/* Edit Item */
+#editForm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#editText {
+    width: 60%;
+    background-color: var(--lightSeaGreen);
+    border: none;
+    border-radius: 5px;
 }
 
 /* == Media Queries == */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 900px) {
     .form-row {
         width: 100%;
         flex-flow: column;
@@ -149,9 +170,14 @@ li {
 
     li {
         padding: 20px;
+        flex-direction: column;
     }
 
     .itemLabel {
-        width: 50%;
+        width: 100%;
+    }
+
+    .list-button {
+        width: 100%;
     }
 }
