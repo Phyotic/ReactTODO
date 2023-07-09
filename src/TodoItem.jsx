@@ -10,14 +10,12 @@ export function TodoItem({ completed, id, title, toggleTodo, deleteTodo, editTod
                         toggleTodo(id, e.target.checked);
                     }}
                 />
-                <span className={completed ? "strikethrough" : ""}>{title}</span>
+                <span className={completed ? "strikethrough content" : "content"}>{title}</span>
             </label>
-
             <button className="btn list-button" onClick={() => editTodo(id)}>
                 Edit
             </button>
-
-            <button className="btn list-button" onClick={() => deleteTodo(id)}>
+            <button className="btn list-button" onClick={() => deleteTodo(id, title)}>
                 Delete
             </button>
         </>
