@@ -38,10 +38,20 @@ export default function App() {
         });
     }
 
-    function deleteTodo(id) {
-        setTodos((curTodos) => {
-            return curTodos.filter((todo) => todo.id !== id);
-        });
+    function deleteTodo(id, title) {
+        const children = document.getElementById("todoList").children;
+
+        for (const child of children) {
+            if (child.querySelector("span.content").textContent == title) {
+                child.classList.toggle("slideOutLeft");
+
+                child.addEventListener("animationend", () => {
+                    setTodos((curTodos) => {
+                        return curTodos.filter((todo) => todo.id !== id);
+                    });
+                });
+            }
+        }
     }
 
     function updateTodo(id, newTitle, event) {

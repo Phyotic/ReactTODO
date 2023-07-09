@@ -17,6 +17,9 @@ body {
     padding-top: 2%;
     height: 100vh;
     width: 100vw;
+    font-size: 1.5rem;
+
+    overflow-x: hidden;
 }
 
 .btn {
@@ -27,10 +30,16 @@ body {
     font-weight: 700;
     float: right;
     clear: right;
+    outline: 3px solid var(--gunmetal);
+    border: none;
+    margin: 7px;
+    transition: background-color 0.3s, color 0.3s, scale(1.3) 0.3s;
 }
 
 .btn:hover {
     background-color: var(--gunmetal);
+    color: white;
+    transform: scale(1.1, 1.2);
 }
 
 .strikethrough {
@@ -48,10 +57,51 @@ body {
     width: 20%;
 }
 
+/* == Animations == */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+}
+
+.slideOutLeft {
+    animation-name: slideOutLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 /* == NewTodoForm == */
 .new-item-form {
     display: flex;
     flex-flow: column;
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
 
 .form-row {
@@ -82,6 +132,11 @@ body {
     font-weight: 500;
     font-size: 2rem;
     box-shadow: 10px 5px 20px var(--gunmetal);
+    transition: color 0.3s;
+}
+
+#addTodoButton:hover {
+    color: white;
 }
 
 /* == Header == */
@@ -89,6 +144,8 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
 
 /* == Todo List == */
@@ -104,6 +161,8 @@ li {
     word-wrap: break-word;
     border-bottom: 2px dashed var(--lightSeaGreen);
     display: flex;
+    animation-name: fadeIn, slideInLeft;
+    animation-duration: 2s, 1s;
 }
 
 .itemLabel {
@@ -114,10 +173,12 @@ li {
 
 .itemLabel span {
     font-weight: 700;
+    transition: scale() 1s;
 }
 
 .itemLabel:hover {
     opacity: 0.6;
+    transform: scale(1.2);
 }
 
 .itemLabel input[type="checkbox"] {
