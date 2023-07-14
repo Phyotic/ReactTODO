@@ -1,6 +1,6 @@
 # **React TODO Application**
 
-This is a Simple TODO list application built using JavaScript's React library. It provides a simple user interface and the core functionality of a TODO list. Added some animations for a more professional look and feel.
+This is a Simple TODO list application built using the React framework. It provides a simple user interface and the core functionality of a TODO list. Added some animations for a more professional look and feel.
 
 No back-end is developed. All storage is done through the browser's local storage.
 
